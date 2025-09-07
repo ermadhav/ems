@@ -8,6 +8,10 @@ import Navigation from "@/components/navigation";
 import Login from "@/pages/login";
 import EmployeeDashboard from "@/pages/employee-dashboard";
 import AdminDashboard from "@/pages/admin-dashboard";
+import AdminEmployees from "@/pages/admin-employees";
+import AdminLeaveRequests from "@/pages/admin-leave-requests";
+import AdminReports from "@/pages/admin-reports";
+import AdminSettings from "@/pages/admin-settings";
 import NotFound from "@/pages/not-found";
 
 function ProtectedRoute({ children, allowedRoles }: { children: React.ReactNode; allowedRoles?: string[] }) {
@@ -56,6 +60,30 @@ function Router() {
         <Route path="/admin">
           <ProtectedRoute allowedRoles={["admin"]}>
             <AdminDashboard />
+          </ProtectedRoute>
+        </Route>
+        
+        <Route path="/admin/employees">
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminEmployees />
+          </ProtectedRoute>
+        </Route>
+        
+        <Route path="/admin/leave-requests">
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminLeaveRequests />
+          </ProtectedRoute>
+        </Route>
+        
+        <Route path="/admin/reports">
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminReports />
+          </ProtectedRoute>
+        </Route>
+        
+        <Route path="/admin/settings">
+          <ProtectedRoute allowedRoles={["admin"]}>
+            <AdminSettings />
           </ProtectedRoute>
         </Route>
         
