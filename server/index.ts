@@ -61,11 +61,7 @@ app.use((req, res, next) => {
   const port = parseInt(process.env.PORT || "5000", 10);
 
   // IMPORTANT: Use 0.0.0.0 for cloud deployments
-  // server.listen(port, "0.0.0.0", () => {
-  //   log(`Serving on http://0.0.0.0:${port}`);
-  // });
-  // ⬆️ ye wala online ke liye hai
-  server.listen(port, "127.0.0.1", () => {
+  server.listen(port, "0.0.0.0", () => {
     log(`Serving on http://0.0.0.0:${port}`);
   });
 })();
